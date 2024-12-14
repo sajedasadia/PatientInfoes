@@ -1,0 +1,90 @@
+﻿@{
+    ViewData["Title"] = "Patient Information Portal";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <style>
+        .form-container {
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .form-title {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+        .btn-primary {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2 class="form-title">Patient Entry Form</h2>
+            <form method="post" action="/Patient/Save">
+                <div class="mb-3">
+                    <label for="patientName" class="form-label">Patient Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="patientName" name="PatientName" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="diseasesName" class="form-label">Diseases Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="diseasesName" name="DiseasesName" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="epilepsy" class="form-label">Epilepsy <span class="text-danger">*</span></label>
+                    <select class="form-select" id="epilepsy" name="Epilepsy" required>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="otherNCDs" class="form-label">Other NCDs</label>
+                    <select multiple class="form-select" id="otherNCDs" name="OtherNCDs">
+                        <option value="Asthma">Asthma</option>
+                        <option value="Cancer">Cancer</option>
+                        <option value="Disorders of ear">Disorders of ear</option>
+                        <option value="Disorder of eye">Disorder of eye</option>
+                        <option value="Mental illness">Mental illness</option>
+                        <option value="Oral health problems">Oral health problems</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="allergies" class="form-label">Allergies</label>
+                    <select multiple class="form-select" id="allergies" name="Allergies">
+                        <option value="Drugs - Penicillin">Drugs - Penicillin</option>
+                        <option value="Drugs - Others">Drugs - Others</option>
+                        <option value="Animals">Animals</option>
+                        <option value="Food">Food</option>
+                        <option value="Ointments">Ointments</option>
+                        <option value="Plant">Plant</option>
+                        <option value="Sprays">Sprays</option>
+                        <option value="Others">Others</option>
+                        <option value="No Allergies">No Allergies</option>
+                    </select>
+                </div>
+
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
